@@ -23,7 +23,7 @@ import java.net.URI;
  * @Update_Date: 2018/8/2 15:10
  * @Update_Description: huangzezhou ²¹³ä
  **/
-public class JustPlayHttpClient {
+public class JustPlayNIOHttpClient {
     public void connect(String url, String type, String body) throws Exception {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -71,7 +71,7 @@ public class JustPlayHttpClient {
     }
 
     public static void main(String[] args) throws Exception {
-        JustPlayHttpClient client = new JustPlayHttpClient();
+        JustPlayNIOHttpClient client = new JustPlayNIOHttpClient();
         client.connect(
                 "http://10.190.55.62:8080/sjtsfw-ldxx/v1/dps?service=DataPivotService&version=1.0.0&request=DescribeDataSet&datasetId=dffa5369-1b73-457c-9ff9-ef11aa852021&format=json",
                 "GET",
