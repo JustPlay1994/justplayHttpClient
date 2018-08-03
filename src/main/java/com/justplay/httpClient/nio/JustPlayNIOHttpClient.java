@@ -49,8 +49,7 @@ public class JustPlayNIOHttpClient {
             // Start the client.
             ChannelFuture f = b.connect(host, port).sync();
 
-            URI uri = new URI("/sjtsfw-ldxx/v1/dps?service=DataPivotService&version=1.0.0&request=DescribeDataSet&datasetId=dffa5369-1b73-457c-9ff9-ef11aa852021&format=json");
-
+            URI uri = new URI(_url.getRawPath()+"?"+_url.getRawQuery());
 
             DefaultFullHttpRequest request = new DefaultFullHttpRequest(HttpVersion.HTTP_1_1, new HttpMethod(type),
                     uri.toASCIIString(), Unpooled.wrappedBuffer(body.getBytes("UTF-8")));
